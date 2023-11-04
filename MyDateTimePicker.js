@@ -2,8 +2,8 @@
 import $ from 'jquery';
 
 // Importez les fichiers CSS et JavaScript de jQuery DateTimePicker
-import 'jquery.datetimepicker.css';
-import 'jquery.datetimepicker.full.min.js';
+import './jquery.datetimepicker.css';
+import './jquery.datetimepicker.full.min.js';
 
 // Créez une fonction d'initialisation pour le DateTimePicker
 const initDateTimePicker = (element, options) => {
