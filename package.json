@@ -1,7 +1,7 @@
 {
-  "name": "datipireact",
-  "version": "1.0.0",
-  "description": "",
+  "name": "datipi-react",
+  "version": "0.0.1",
+  "description": "A useful package for handling advanced mathematical operations in JavaScript, including complex mathematical functions and numerical computation tools.",
   "main": "MyDateTimePicker.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
