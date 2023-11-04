@@ -1,6 +1,6 @@
 {
   "name": "datipi-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A useful package for handling advanced mathematical operations in JavaScript, including complex mathematical functions and numerical computation tools.",
   "main": "MyDateTimePicker.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "jquery-mousewheel": "^3.1.13"
   }
 }
