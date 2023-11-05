@@ -26,15 +26,20 @@ Import the DateTimePicker component at the top of your JavaScript/TypeScript fil
 ```javascript
 import * as datipiReact from 'datipi-react';
 ```
-Use useEffect to call initDateTimePicker with the target DOM element and any options you wish to pass to the DateTimePicker.
+Use useEffect to call initDateTimePicker with the target DOM element and any options you wish to pass to the DateTimePicker, and return a cleanup function to call destroyDateTimePicker when the component unmounts.
 ```javascript
 import { useEffect } from 'react';
 
 function MyComponent() {
   useEffect(() => {
-    datipiReact.initDateTimePicker('#my-element', {
+    const elementId = '#my-element';
+    datipiReact.initDateTimePicker(elementId, {
       format: 'Y-m-d',
     });
+
+    return () => {
+      datipiReact.destroyDateTimePicker(elementId);
+    };
   }, []);
 
   return (
@@ -44,6 +49,7 @@ function MyComponent() {
     </div>
   );
 }
+
 ```
 ---
 ## License
