@@ -24,69 +24,26 @@ yarn add datipi-react
 
 Import the DateTimePicker component at the top of your JavaScript/TypeScript file:
 ```javascript
-import DateTimePicker from 'datipi-react';
-Use the DateTimePicker component in your JSX code:
-function MyComponent() {
-  return (
-    <div>
-      <h1>Select a Date and Time:</h1>
-      <DateTimePicker />
-    </div>
-  );
-}
+import * as datipiReact from 'datipi-react';
 ```
-
-### Customize the DateTimePicker by passing options as props:
-
+Use useEffect to call initDateTimePicker with the target DOM element and any options you wish to pass to the DateTimePicker.
 ```javascript
+import { useEffect } from 'react';
+
 function MyComponent() {
-  const dateTimePickerOptions = {
-    format: 'Y-m-d',
-    datepicker: true,
-  };
+  useEffect(() => {
+    datipiReact.initDateTimePicker('#my-element', {
+      format: 'Y-m-d',
+    });
+  }, []);
 
   return (
     <div>
       <h1>Select a Date and Time:</h1>
-      <DateTimePicker options={dateTimePickerOptions} />
+      <input id="my-element" type="text" />
     </div>
   );
 }
-```
-
-### Handle the selected date using state and event handling:
-```javascript
-import React, { useState } from 'react';
-import DateTimePicker from 'datipi-react';
-
-function MyComponent() {
-  const [selectedDate, setSelectedDate] = useState('');
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
-  return (
-    <div>
-      <h1>Select a Date:</h1>
-      <DateTimePicker onChange={handleDateChange} />
-      <p>Selected Date: {selectedDate}</p>
-    </div>
-  );
-}
-export default MyComponent;
-```
----
-## Options
-
-You can customize the behavior of the DateTimePicker by passing options as props to the DateTimePicker component. Refer to the jQuery DateTimePicker documentation for available options.
-```javascript
-const dateTimePickerOptions = {
-  format: 'Y-m-d',
-  datepicker: true,
-};
-
-<DateTimePicker options={dateTimePickerOptions} />
 ```
 ---
 ## License
