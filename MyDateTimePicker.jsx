@@ -12,6 +12,7 @@ import './jquery.datetimepicker.full.min.js';
 const defaultOptions = {
   format: 'Y-m-d',
   datepicker: true,
+  timepicker: false
   // ... other default options
 };
 
