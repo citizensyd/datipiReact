@@ -28,27 +28,30 @@ import * as datipiReact from 'datipi-react';
 ```
 Use useEffect to call initDateTimePicker with the target DOM element and any options you wish to pass to the DateTimePicker, and return a cleanup function to call destroyDateTimePicker when the component unmounts.
 ```javascript
-import { useEffect } from 'react';
-
-function MyComponent() {
+  /**
+   * A hook that initializes DateTimePickers when the component mounts
+   * and destroys them when the component unmounts.
+   */
   useEffect(() => {
-    const elementId = '#my-element';
-    datipiReact.initDateTimePicker(elementId, {
-      format: 'Y-m-d',
-    });
+    datipiReact.initDateTimePicker(
+      '#date-of-birth',
+      {
+        format: 'Y-m-d'
+      },
+      setDateOfBirth);
+
+    datipiReact.initDateTimePicker(
+      '#start-date',
+      {
+        format: 'Y-m-d'
+      },
+      setStartDate);
 
     return () => {
-      datipiReact.destroyDateTimePicker(elementId);
+      datipiReact.destroyDateTimePicker('#date-of-birth');
+      datipiReact.destroyDateTimePicker('#start-date');
     };
   }, []);
-
-  return (
-    <div>
-      <h1>Select a Date and Time:</h1>
-      <input id="my-element" type="text" />
-    </div>
-  );
-}
 
 ```
 ---

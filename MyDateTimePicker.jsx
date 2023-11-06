@@ -17,12 +17,13 @@ const defaultOptions = {
 };
 
 /**
- * Initializes the DateTimePicker on a specified element.
+ * Initializes the DateTimePicker on a specified element and associates it with a state update function.
  *
  * @param {string|Object} element - The DOM element or a jQuery selector string to initialize the DateTimePicker on.
  * @param {Object} [options] - An object of options to customize the DateTimePicker.
+ * @param {Function} setStateFunction - The state update function to set the selected date.
  */
-const initDateTimePicker = (element, options) => {
+const initDateTimePicker = (element, options, setStateFunction) => {
   // Use jQuery to select the element
   const $element = $(element);
 
@@ -38,6 +39,12 @@ const initDateTimePicker = (element, options) => {
   // Try to initialize the DateTimePicker and catch any errors
   try {
     $element.datetimepicker(finalOptions);
+
+    // Attach an event listener to handle date changes and update the state
+    $element.on('change', function () {
+      const selectedDate = $element.val();
+      setStateFunction(selectedDate);
+    });
   } catch (error) {
     console.error('Failed to initialize DateTimePicker:', error);
   }
@@ -58,6 +65,7 @@ const destroyDateTimePicker = (element) => {
     console.error('Failed to destroy DateTimePicker:', error);
   }
 };
+
 
 // Export the initialization and cleanup functions for use elsewhere
 export { initDateTimePicker, destroyDateTimePicker };
