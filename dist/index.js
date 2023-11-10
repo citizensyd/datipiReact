@@ -1,0 +1,1 @@
+"use strict";module.exports=function(e){var t=e.isOpen,l=e.onClose,n=e.children;return React.createElement("div",{className:t?ModalStyles.Open:ModalStyles.Close},React.createElement("span",{onClick:l},"×"),n)};
