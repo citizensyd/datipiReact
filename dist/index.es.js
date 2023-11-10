@@ -1,1 +1,0 @@
-var e=function(e){var a=e.isOpen,l=e.onClose,t=e.children;return React.createElement("div",{className:a?ModalStyles.Open:ModalStyles.Close},React.createElement("span",{onClick:l},"×"),t)};export{e as default};
