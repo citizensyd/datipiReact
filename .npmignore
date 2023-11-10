@@ -1,0 +1,11 @@
+# Exclure les fichiers de développement
+__tests__
+*.test.js
+*.spec.js
+src/
+
+# Exclure les fichiers temporaires
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
