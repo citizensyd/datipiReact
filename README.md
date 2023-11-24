@@ -6,6 +6,14 @@ test-modal-for-me is a JavaScript library that provides a React-friendly wrapper
 
 ## Required
 
+***Dependencies***
+
+Please ensure you have the following dependencies installed on your system:
+
+`- ℹ️ react 18.2.0`
+
+`- ℹ️ styled-components 6.1.1`
+
 ## Installation
 
 You can install test-modal-for-me using npm or yarn:
