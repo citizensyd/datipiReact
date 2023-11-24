@@ -6,5 +6,3 @@ export const ModalStyles = styled.div`
     cursor: pointer;
   }
 `;
-
-ModalStyles.shouldForwardProp = (prop) => prop !== 'isModalOpen';
